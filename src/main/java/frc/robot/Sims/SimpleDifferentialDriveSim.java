@@ -149,10 +149,6 @@ public class SimpleDifferentialDriveSim extends SubsystemBase {
     m_rightEncoder.reset();
   }
 
-  public void resetGyro() {
-    m_gyro.reset();
-  }
-
   public double getAverageEncoderDistance() {
     return (m_leftEncoder.getDistance() + m_rightEncoder.getDistance()) / 2.0;
   }
