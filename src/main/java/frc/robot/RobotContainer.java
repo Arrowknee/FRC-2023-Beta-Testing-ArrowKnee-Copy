@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -77,6 +79,10 @@ public class RobotContainer {
     this.xboxOperator.getAButton().onTrue(
       new InstantCommand(() -> this.claw.toggle())
     );
+
+
+    // Shuffleboard button commands
+    Shuffleboard.getTab("Commands").add("Reset Pose", new InstantCommand(() -> this.driveSim.resetOdometry(new Pose2d())));
   }
 
   /**

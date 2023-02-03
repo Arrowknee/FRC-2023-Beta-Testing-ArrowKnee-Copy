@@ -141,7 +141,7 @@ public class SimpleDifferentialDriveSim extends SubsystemBase {
   public void resetOdometry(Pose2d pose) {
     resetEncoders();
     m_differentialDrivetrainSimulator.setPose(pose);
-    m_odometry.resetPosition(m_gyro.getRotation2d(), m_leftEncoder.getDistance(), m_rightEncoder.getDistance(), pose);
+    m_odometry.resetPosition(pose.getRotation(), m_leftEncoder.getDistance(), m_rightEncoder.getDistance(), pose);
   }
 
   public void resetEncoders() {
