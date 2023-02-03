@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.lib.input.XboxController;
+import frc.robot.Sims.SimpleDifferentialDriveSim;
 import frc.robot.commands.ArmController;
 import frc.robot.commands.ClawController;
 import frc.robot.commands.Drive;
@@ -35,6 +36,7 @@ public class RobotContainer {
   private final Arm arm = new Arm();
   // private final ElevatorPID elevatorPID = new ElevatorPID();
   private final Claw claw = new Claw();
+ // private final SimpleDifferentialDriveSim driveSim = new SimpleDifferentialDriveSim(); 
   
   // The robot's controllers
   private final XboxController xboxDriver;
@@ -60,8 +62,10 @@ public class RobotContainer {
         new ElevatorController(elevator, xboxOperator)); // added, works
   
     this.arm.setDefaultCommand(
-      new ArmController(arm, xboxOperator)
-    );
+      new ArmController(arm, xboxOperator));
+      
+    //this.driveSim.setDefaultCommand(new Drive(driveSim, xboxDriver));
+
 
     //  this.elevatorPID.setDefaultCommand(
         // new ElevatorPIDController(elevatorPID,xboxOperator)); // added, untested

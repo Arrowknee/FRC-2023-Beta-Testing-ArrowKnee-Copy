@@ -8,13 +8,14 @@ import frc.robot.subsystems.Drivetrain;
 import frc.lib.RebelUtil;
 import frc.lib.input.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-
+import frc.robot.Sims.SimpleDifferentialDriveSim;
 
 
 /** An example command that uses an example subsystem. */
 public class Drive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final Drivetrain m_driveSubsystem;
+  //private final SimpleDifferentialDrivetrainSim m_driveSubsystem; /*UNCOMMENT THIS */
   private final XboxController xboxDriver;
   private final double MAX_FORWARD_SPEED = 5;
   private final double MAX_TURN_SPEED = 5;
@@ -29,6 +30,13 @@ public class Drive extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_driveSubsystem);
   }
+  /* UNCOMMENT WHEN NEEDED
+  public Drive(SimpleDifferentialDriveSim drive, XboxController controller){
+    xboxDriver = controller;
+    m_driveSubsystem = m_driveSubsystem;
+    addRequirements(m_driveSubsystem);
+  }
+  */
 
   // Called when the command is initially scheduled.
   @Override

@@ -4,10 +4,15 @@
 
 package frc.robot;
 
+import java.util.List;
+
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+
+import frc.robot.Sims.SimpleDifferentialDriveSim;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -18,10 +23,8 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   
-
   
   private RobotContainer m_robotContainer;
-
   private Timer time;
 
   /**
@@ -33,6 +36,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all 
     m_robotContainer = new RobotContainer();
     time = new Timer();
+    //m_trajectory = TrajectoryGenerator.generateTrajectory(new Pose2d(2, 2, new Rotation2d()), List.of(), new Pose2d(6, 4, new Rotation2d()), new TrajectoryConfig(2,2));
   }
 
   /**
@@ -63,8 +67,7 @@ public class Robot extends TimedRobot {
   public void autonomousInit() {
     time.reset();
     time.start();
-    
-    // m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
@@ -108,5 +111,6 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically whilst in simulation. */
   @Override
-  public void simulationPeriodic() {}
+  public void simulationPeriodic() {
+  }
 }
