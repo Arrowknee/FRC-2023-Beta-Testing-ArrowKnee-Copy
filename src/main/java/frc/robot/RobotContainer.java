@@ -31,12 +31,12 @@ import frc.robot.subsystems.Arm;
  */
 public class RobotContainer {
   // ---------- Robot Subsystems ---------- \\
-  private final Drivetrain drive = new Drivetrain();
+  // private final Drivetrain drive = new Drivetrain();
   private final Elevator elevator = new Elevator();
   private final Arm arm = new Arm();
   // private final ElevatorPID elevatorPID = new ElevatorPID();
   private final Claw claw = new Claw();
- // private final SimpleDifferentialDriveSim driveSim = new SimpleDifferentialDriveSim(); 
+ private final SimpleDifferentialDriveSim driveSim = new SimpleDifferentialDriveSim(); 
   
   // The robot's controllers
   private final XboxController xboxDriver;
@@ -55,8 +55,8 @@ public class RobotContainer {
     this.xboxOperator = new XboxController(2);
 
     // Controler Throttle Mappings
-    this.drive.setDefaultCommand(
-        new Drive(drive, xboxDriver));
+    // this.drive.setDefaultCommand(
+    //     new Drive(drive, xboxDriver));
     
     this.elevator.setDefaultCommand(
         new ElevatorController(elevator, xboxOperator)); // added, works
@@ -64,7 +64,7 @@ public class RobotContainer {
     this.arm.setDefaultCommand(
       new ArmController(arm, xboxOperator));
       
-    //this.driveSim.setDefaultCommand(new Drive(driveSim, xboxDriver));
+    this.driveSim.setDefaultCommand(new Drive(driveSim, xboxDriver));
 
 
     //  this.elevatorPID.setDefaultCommand(

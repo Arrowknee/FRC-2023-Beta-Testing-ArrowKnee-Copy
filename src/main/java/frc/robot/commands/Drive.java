@@ -14,8 +14,8 @@ import frc.robot.Sims.SimpleDifferentialDriveSim;
 /** An example command that uses an example subsystem. */
 public class Drive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final Drivetrain m_driveSubsystem;
-  //private final SimpleDifferentialDrivetrainSim m_driveSubsystem; /*UNCOMMENT THIS */
+  // private final Drivetrain m_driveSubsystem;
+  private final SimpleDifferentialDriveSim m_driveSubsystem; /*UNCOMMENT THIS */
   private final XboxController xboxDriver;
   private final double MAX_FORWARD_SPEED = 5;
   private final double MAX_TURN_SPEED = 5;
@@ -24,19 +24,18 @@ public class Drive extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public Drive(Drivetrain driveSubsystem, XboxController controller) {
+  /*public Drive(Drivetrain driveSubsystem, XboxController controller) {
     xboxDriver = controller;
     m_driveSubsystem = driveSubsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_driveSubsystem);
-  }
-  /* UNCOMMENT WHEN NEEDED
+  }*/
+
   public Drive(SimpleDifferentialDriveSim drive, XboxController controller){
     xboxDriver = controller;
-    m_driveSubsystem = m_driveSubsystem;
+    m_driveSubsystem = drive;
     addRequirements(m_driveSubsystem);
   }
-  */
 
   // Called when the command is initially scheduled.
   @Override
